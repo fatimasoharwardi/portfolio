@@ -1584,9 +1584,13 @@ footer {
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
-    height: 3px;
-    background: var(--muted-gold);
+    height: 4px;
+    background: linear-gradient(90deg, var(--muted-gold), var(--forest-green));
     border-radius: 2px;
+}
+
+.about-title::before {
+    display: none;
 }
 
 .about-description {
@@ -3227,10 +3231,6 @@ footer {
     font-size: 0.9rem;
 }
 
-.skill-box:hover .progress {
-    background: linear-gradient(90deg, var (--muted-gold), var(--forest-green));
-}
-
 @media (max-width: 768px) {
     .skills-toggle {
         flex-direction: column;
@@ -3296,15 +3296,7 @@ footer {
 }
 
 #skills-expertise .section-title::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--forest-green), var(--muted-gold));
-    border-radius: 2px;
+    display: none;
 }
 
 #skills-expertise .section-title::after {
@@ -3509,6 +3501,10 @@ footer {
     height: 4px;
     background: var(--forest-green);
     border-radius: 2px;
+}
+
+.section-title::before, .contact-heading::before {
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -4030,15 +4026,7 @@ section {
 }
 
 .section-title::before, .about-title::before {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 140px;
-    height: 2px;
-    background: rgba(45, 74, 66, 0.2);
-    border-radius: 2px;
+    display: none;
 }
 
 /* Enhanced About Section */

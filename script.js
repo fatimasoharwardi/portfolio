@@ -1,14 +1,14 @@
 // Sample data arrays
 const projects = [
     {
-        title: "Todo List App",
-        description: "A dynamic todo list application with features like add, delete, and mark tasks as complete.",
+        title: "Stationery Website",
+        description: "Modern e-commerce website for stationery products with responsive design.",
         technologies: ["HTML", "CSS", "JavaScript"],
-        image: "images/list.png",
-        demoLink: "https://fatimasoharwardi.github.io/todolist/",
-        codeLink: "https://github.com/fatimasoharwardi/todolist.git"
+        image: "images/stationary.png",
+        demoLink: "https://fatimasoharwardi.github.io/universalstationary/",
+        codeLink: "https://github.com/fatimasoharwardi/universalstationary.git"
     },
-    {
+       {
         title: "Tic Tac Toe Game",
         description: "Interactive tic-tac-toe game with winning logic and score tracking.",
         technologies: ["HTML", "CSS", "JavaScript"],
@@ -16,6 +16,15 @@ const projects = [
         demoLink: "https://fatimasoharwardi.github.io/tictac/",
         codeLink: "https://github.com/fatimasoharwardi/tictac.git"
     },
+    {
+        title: "Todo List App",
+        description: "A dynamic todo list application with features like add, delete, and mark tasks as complete.",
+        technologies: ["HTML", "CSS", "JavaScript"],
+        image: "images/list.png",
+        demoLink: "https://fatimasoharwardi.github.io/todolist/",
+        codeLink: "https://github.com/fatimasoharwardi/todolist.git"
+    },
+ 
     {
         title: "Digital Clock",
         description: "Real-time digital clock with modern UI and multiple time formats.",
@@ -32,14 +41,7 @@ const projects = [
         demoLink: "https://fatimasoharwardi.github.io/calculator/",
         codeLink: "https://github.com/fatimasoharwardi/calculator.git"
     },
-    {
-        title: "Stationery Website",
-        description: "Modern e-commerce website for stationery products with responsive design.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        image: "images/stationary.png",
-        demoLink: "https://fatimasoharwardi.github.io/universalstationary/",
-        codeLink: "https://github.com/fatimasoharwardi/universalstationary.git"
-    }
+  
 ];
 
 // Core functions
