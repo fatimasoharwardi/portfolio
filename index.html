@@ -1,512 +1,596 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="contact.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0C0C0E">
+
+<title>Kaneez Fatima Soharwardi | PHP &amp; Laravel Developer</title>
+<meta name="description" content="Kaneez Fatima Soharwardi — PHP &amp; Laravel Developer in Karachi, Pakistan. I build secure, scalable web applications, ERP and accounting systems with PHP, Laravel, MySQL and JavaScript, and support businesses with digital marketing and SEO.">
+<meta name="author" content="Kaneez Fatima Soharwardi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fatimasoharwardi.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kaneez Fatima Soharwardi | PHP &amp; Laravel Developer">
+<meta property="og:description" content="PHP &amp; Laravel developer building secure, scalable web applications, ERP and accounting systems. Also experienced in SEO and digital marketing.">
+<meta property="og:url" content="https://fatimasoharwardi.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kaneez Fatima Soharwardi | PHP &amp; Laravel Developer">
+<meta name="twitter:description" content="PHP &amp; Laravel developer building secure, scalable web applications, ERP and accounting systems.">
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230C0C0E'/><text x='50' y='69' font-size='50' font-family='Arial,Helvetica,sans-serif' font-weight='bold' fill='%23D9A441' text-anchor='middle'>KF</text></svg>">
+
+<!-- Prevent theme flash -->
+<script>
+  (function () {
+    try {
+      var t = localStorage.getItem('kf-portfolio-theme');
+      if (!t) {
+        t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav id="navbar">
-        <div class="logo">
-            <img src="logo.png" alt="KF Logo">
-        </div>
-        <button class="menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-overlay"></div>
-        <ul class="nav-links">
-            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-            <li><a href="#skills-expertise"><i class="fas fa-cogs"></i> Skills</a></li>
-            <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+
+    <a href="#home" class="brand" aria-label="Kaneez Fatima Soharwardi — back to top">
+      <span class="brand-mark" aria-hidden="true">KF</span>
+      <span class="brand-text">
+        <span class="brand-name">Kaneez Fatima</span>
+        <span class="brand-role">PHP &amp; Laravel Developer</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="primary-nav" aria-label="Primary navigation">
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link is-active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
     </nav>
 
-    <section id="home">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <span class="hero-greeting">Assalam-o-Alaikum, I'm</span>
-                    <h1>Kaneez Fatima Soharwardi</h1>
-                    <h2 class="hero-title">Web Developer</h2>
-                    <p class="hero-description">
-                        A highly skilled web developer with expertise in frontend and backend technologies, MS Office, Content Writing, and Data Management. Delivering excellence with dedication and precision.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="#skills-expertise" class="cta-primary">My Skills</a>
-                        <a href="CV_Kaneez_Fatima.pdf" download class="cta-secondary">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://i.pinimg.com/736x/48/dd/d6/48ddd6f4a98e93e44d65cb8b1d157c9d.jpg" alt="Professional Photo">
-                </div>
-                
-            </div>
-        </div>
-    </section>
+    <div class="header-actions">
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+      </button>
 
-    <section id="services">
-        <div class="services-wrapper">
-            <h2 class="section-title">My Services</h2>
-            <div class="services-container">
-                <div class="service-item">
-                    <div class="service-number">01</div>
-                    <div class="service-content">
-                        <div class="service-header">
-                            <i class="fas fa-laptop-code"></i>
-                            <h3>Web Development & CMS</h3>
-                        </div>
-                        <p>Professional web development using HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, MySQL, Laravel, and WordPress. I build custom websites, web apps, and content management systems tailored to your needs.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Custom Website & Web App Development</li>
-                            <li><i class="fas fa-check"></i> Responsive Design (HTML5, CSS3, Bootstrap)</li>
-                            <li><i class="fas fa-check"></i> WordPress & Laravel Solutions</li>
-                            <li><i class="fas fa-check"></i> API Integration (XML & JSON)</li>
-                            <li><i class="fas fa-check"></i> Version Control with Git</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="service-number">02</div>
-                    <div class="service-content">
-                        <div class="service-header">
-                            <i class="fas fa-file-excel"></i>
-                            <h3>MS Office & Data Management</h3>
-                        </div>
-                        <p>Advanced MS Office skills for professional documentation, data entry, analysis, and PDF management. I organize, format, and analyze data efficiently for business and academic needs.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Word, Excel, PowerPoint, Outlook</li>
-                            <li><i class="fas fa-check"></i> Data Entry & Analysis</li>
-                            <li><i class="fas fa-check"></i> PDF Conversion & Formatting</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="service-item">
-                    <div class="service-number">03</div>
-                    <div class="service-content">
-                        <div class="service-header">
-                            <i class="fas fa-bullhorn"></i>
-                            <h3>Content & Social Media Marketing</h3>
-                        </div>
-                        <p>SEO-optimized content writing, product descriptions, and social media marketing to boost your brand's online presence and engagement.</p>
-                        <ul class="service-features">
-                            <li><i class="fas fa-check"></i> Content Writing & SEO</li>
-                            <li><i class="fas fa-check"></i> Social Media Campaigns</li>
-                            <li><i class="fas fa-check"></i> Brand Promotion & Strategy</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <a href="#contact" class="btn btn--primary btn--sm header-cta">Hire Me</a>
 
-    <section id="about">
-    <div class="about-wrapper">
-        <div class="about-content">
-            <span class="section-subtitle">About Me</span>
-            <h2 class="about-title">Who I Am</h2>
-            <p class="about-description">
-                I'm Kaneez Fatima Soharwardi, a passionate web developer with expertise in both frontend and backend technologies. I create modern, responsive, and user-friendly websites and web applications using HTML, CSS, JavaScript, Bootstrap, jQuery, PHP, MySQL, XML, JSON, and Git. My focus is on delivering high-quality solutions that are efficient, secure, and tailored to client needs. I am committed to continuous learning and always strive to stay updated with the latest trends and best practices in web development.
+      <button class="icon-btn menu-toggle" id="menu-toggle" type="button"
+              aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="menu-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-copy">
+        <span class="status-badge">
+          <span class="dot" aria-hidden="true"></span>
+          Available for Freelance Projects
+        </span>
+
+        <p class="hero-eyebrow">PHP &amp; Laravel Developer</p>
+
+        <h1 class="hero-title">Kaneez Fatima Soharwardi</h1>
+
+        <p class="hero-lead">
+          I build secure, scalable, and user-focused web applications using PHP, Laravel,
+          MySQL, JavaScript, and modern web technologies.
+        </p>
+
+        <p class="hero-sub">
+          Also experienced in SEO, content strategy, and digital marketing to help businesses
+          build and grow their online presence.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn--primary">View My Work</a>
+          <a href="#contact" class="btn btn--outline">Contact Me</a>
+          <a href="CV_Kaneez_Fatima.pdf" download class="btn btn--ghost">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-media">
+        <div class="profile-frame">
+          <img src="images/profile.jpg"
+               alt="Portrait of Kaneez Fatima Soharwardi, PHP and Laravel developer"
+               width="720" height="900"
+               onerror="this.onerror=null;this.src='https://i.pinimg.com/736x/48/dd/d6/48ddd6f4a98e93e44d65cb8b1d157c9d.jpg';">
+        </div>
+        <ul class="profile-tags" aria-label="Core technologies">
+          <li>PHP</li><li>Laravel</li><li>MySQL</li><li>JavaScript</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">About Me</span>
+        <h2 class="section-title">Building Practical Solutions Through Code &amp; Strategy</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>
+            I'm <strong>Kaneez Fatima Soharwardi</strong>, a PHP and Laravel developer with
+            practical experience developing web applications, business management systems,
+            accounting solutions, ERP-style applications, responsive websites, and
+            database-driven systems.
+          </p>
+          <p>
+            My development work focuses on PHP, Laravel, MySQL, JavaScript, HTML, CSS,
+            Bootstrap, jQuery, APIs, XML, JSON, Git, and WordPress. I enjoy taking a real
+            business requirement and turning it into a clean, reliable, and maintainable
+            application.
+          </p>
+          <p>
+            Alongside development, I work in digital marketing — particularly SEO, content
+            strategy, social media marketing, and online brand promotion. That combination
+            helps me build products that are not only technically solid, but also positioned
+            to be found and used.
+          </p>
+          <p>
+            My approach is straightforward: understand the requirement properly, build it
+            practically, and keep it easy to maintain.
+          </p>
+        </div>
+
+        <aside class="about-card reveal">
+          <h3>Quick Overview</h3>
+          <dl class="fact-list">
+            <div>
+              <dt>Role</dt>
+              <dd>PHP &amp; Laravel Developer</dd>
+            </div>
+            <div>
+              <dt>Primary Focus</dt>
+              <dd>Business &amp; ERP Systems</dd>
+            </div>
+            <div>
+              <dt>Also Working In</dt>
+              <dd>Digital Marketing &amp; SEO</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Karachi, Pakistan</dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:fatimasohwardii@gmail.com">fatimasohwardii@gmail.com</a></dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+
+      <!-- Professional Journey -->
+      <div class="journey">
+        <h3 class="journey-title reveal">Education &amp; Professional Development</h3>
+
+        <div class="journey-grid">
+          <article class="journey-card reveal">
+            <span class="journey-year">2024 — 2025</span>
+            <h4>Software Engineering</h4>
+            <p class="journey-org">Aptech Computer Education</p>
+            <p>
+              Completed software engineering training with a focus on programming
+              fundamentals, web development, databases, and application development.
             </p>
+            <ul class="pill-row">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li><li>PHP</li>
+              <li>MySQL</li><li>Bootstrap</li><li>jQuery</li><li>Git</li>
+            </ul>
+          </article>
+
+          <article class="journey-card reveal">
+            <span class="journey-year">2025</span>
+            <h4>Digital Marketing</h4>
+            <p class="journey-org">Bano Qabil</p>
+            <p>
+              Completed digital marketing training covering SEO, content marketing, social
+              media marketing, online promotion, and digital marketing fundamentals.
+            </p>
+            <ul class="pill-row">
+              <li>SEO</li><li>Content Marketing</li><li>Social Media Marketing</li>
+              <li>Online Promotion</li>
+            </ul>
+          </article>
         </div>
+      </div>
+
     </div>
-</section>
+  </section>
 
-    <section id="education">
-        <h2 class="section-title">Educational Journey</h2>
-        <div class="education-timeline">
-            <div class="education-item">
-                <div class="education-date">2024 - Present</div>
-                <h3 class="education-title">Software Engineering</h3>
-                <div class="education-institute">Aptech Computer Education</div>
-                <p class="education-description">Currently pursuing software engineering with focus on web development and programming fundamentals.</p>
-                <div class="education-skills">
-                    <span>HTML</span>
-                    <span>CSS</span>
-                    <span>JavaScript</span>
-                </div>
-            </div>
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section section--alt">
+    <div class="container">
 
-            <div class="education-item">
-                <div class="education-date">2024</div>
-                <h3 class="education-title">Matriculation (9th Grade)</h3>
-                <div class="education-institute">GTM School</div>
-                <p class="education-description">Completed matriculation with excellent academic performance and active participation in extracurricular activities.</p>
-            </div>
+      <div class="section-head reveal">
+        <span class="eyebrow">Skills &amp; Expertise</span>
+        <h2 class="section-title">Technologies I Work With</h2>
+        <p class="section-sub">
+          A practical toolkit focused on building complete, production-ready web solutions —
+          from database design to responsive interface.
+        </p>
+      </div>
 
-            <div class="education-item">
-                <div class="education-date">2022 - Present</div>
-                <h3 class="education-title">Nazra-tul-Quran</h3>
-                <div class="education-institute">Islamic Education Center</div>
-                <p class="education-description">Studying and teaching Quran with Tajweed, focusing on proper pronunciation and recitation rules.</p>
-                <div class="education-skills">
-                    <span>Tajweed</span>
-                    <span>Islamic Studies</span>
-                    <span>Teaching</span>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="skills-grid">
 
-    <section id="skills-expertise">
-    <div class="skills-container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        
-        <div class="skills-toggle">
-            <button class="toggle-btn active" data-type="technical">
-                <i class="fas fa-code"></i> Technical Skills
-            </button>
-            <button class="toggle-btn" data-type="soft">
-                <i class="fas fa-brain"></i> Soft Skills
-            </button>
-        </div>
+        <article class="skill-card skill-card--featured reveal">
+          <span class="skill-num">01</span>
+          <h3>Backend Development</h3>
+          <ul class="pill-row">
+            <li class="pill--accent">PHP</li>
+            <li class="pill--accent">Laravel</li>
+            <li>MySQL</li>
+            <li>REST APIs</li>
+            <li>Database Design</li>
+            <li>Authentication &amp; Authorization</li>
+            <li>CRUD Systems</li>
+            <li>Business Logic</li>
+          </ul>
+        </article>
 
-        <div class="skills-grid technical active">
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-file-excel"></i>
-                    <h3>MS Office Suite</h3>
-                </div>
-                <p class="skill-description">Advanced proficiency in Word, Excel, PowerPoint, and Outlook for professional document creation.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 95%"></div>
-                    <span>95%</span>
-                </div>
-            </div>
+        <article class="skill-card reveal">
+          <span class="skill-num">02</span>
+          <h3>Frontend Development</h3>
+          <ul class="pill-row">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Bootstrap</li>
+            <li>jQuery</li><li>Responsive Web Design</li><li>AJAX</li>
+            <li>JSON</li><li>XML</li>
+          </ul>
+        </article>
 
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-keyboard"></i>
-                    <h3>Data Entry & Analysis</h3>
-                </div>
-                <p class="skill-description">Fast typing, accurate data handling, and proficiency in Excel formulas & basic analytics.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 90%"></div>
-                    <span>90%</span>
-                </div>
-            </div>
+        <article class="skill-card reveal">
+          <span class="skill-num">03</span>
+          <h3>CMS &amp; Platforms</h3>
+          <ul class="pill-row">
+            <li>WordPress</li><li>Git</li><li>GitHub</li>
+          </ul>
+        </article>
 
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-code"></i>
-                    <h3>Web Development</h3>
-                </div>
-                <p class="skill-description">HTML coding, responsive design, and JavaScript fundamentals including Objects, Arrays, and Loops.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
+        <article class="skill-card reveal">
+          <span class="skill-num">04</span>
+          <h3>Digital Marketing</h3>
+          <ul class="pill-row">
+            <li>SEO</li><li>Keyword Research</li><li>On-Page SEO</li>
+            <li>Content Strategy</li><li>Social Media Marketing</li>
+            <li>Content Writing</li><li>Brand Promotion</li>
+            <li>Digital Marketing Strategy</li>
+          </ul>
+        </article>
 
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-bootstrap"></i>
-                    <h3>Bootstrap</h3>
-                </div>
-                <p class="skill-description">Proficient in Bootstrap framework for responsive and modern web design.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 90%"></div>
-                    <span>90%</span>
-                </div>
-            </div>
+        <article class="skill-card reveal">
+          <span class="skill-num">05</span>
+          <h3>Development Tools</h3>
+          <ul class="pill-row">
+            <li>Git</li><li>GitHub</li><li>VS Code</li><li>XAMPP</li><li>cPanel</li>
+          </ul>
+        </article>
 
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-js"></i>
-                    <h3>jQuery</h3>
-                </div>
-                <p class="skill-description">Expert in jQuery for dynamic and interactive web applications.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-pen-fancy"></i>
-                    <h3>Content & SEO</h3>
-                </div>
-                <p class="skill-description">SEO-optimized content writing, product descriptions, and marketing copies.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 88%"></div>
-                    <span>88%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-file-pdf"></i>
-                    <h3>PDF Management</h3>
-                </div>
-                <p class="skill-description">Expert in PDF conversion, document formatting, and file organization.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-            <!-- New Skill: XML -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-code"></i>
-                    <h3>XML</h3>
-                </div>
-                <p class="skill-description">Skilled in structuring and parsing XML data for web applications and data exchange.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 80%"></div>
-                    <span>80%</span>
-                </div>
-            </div>
-            <!-- New Skill: JSON -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-code"></i>
-                    <h3>JSON</h3>
-                </div>
-                <p class="skill-description">Proficient in using JSON for data interchange and API integration in web projects.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-            <!-- New Skill: PHP -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-php"></i>
-                    <h3>PHP</h3>
-                </div>
-                <p class="skill-description">Experience in server-side scripting and dynamic website development using PHP.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 75%"></div>
-                    <span>75%</span>
-                </div>
-            </div>
-            <!-- New Skill: MySQL -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-database"></i>
-                    <h3>MySQL</h3>
-                </div>
-                <p class="skill-description">Knowledge of database design, queries, and integration with web applications.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 75%"></div>
-                    <span>75%</span>
-                </div>
-            </div>
-            <!-- New Skill: Git -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-git-alt"></i>
-                    <h3>Git</h3>
-                </div>
-                <p class="skill-description">Version control and collaboration using Git and GitHub for project management.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 80%"></div>
-                    <span>80%</span>
-                </div>
-            </div>
-            <!-- New Skill: Laravel -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-laravel"></i>
-                    <h3>Laravel</h3>
-                </div>
-                <p class="skill-description">Experience in building secure and scalable web applications using the Laravel PHP framework.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 70%"></div>
-                    <span>70%</span>
-                </div>
-            </div>
-            <!-- New Skill: WordPress -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fab fa-wordpress"></i>
-                    <h3>WordPress</h3>
-                </div>
-                <p class="skill-description">Skilled in creating and customizing WordPress websites and themes for various business needs.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 80%"></div>
-                    <span>80%</span>
-                </div>
-            </div>
-            <!-- New Skill: Social Media Marketing -->
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Social Media Marketing</h3>
-                </div>
-                <p class="skill-description">Expertise in promoting brands and businesses through effective social media strategies and campaigns.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="skills-grid soft">
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-comments"></i>
-                    <h3>Communication</h3>
-                </div>
-                <p class="skill-description">Clear speaking & writing skills with professional interaction abilities.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 92%"></div>
-                    <span>92%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-clock"></i>
-                    <h3>Time Management</h3>
-                </div>
-                <p class="skill-description">Efficient work handling and consistent deadline meeting.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 88%"></div>
-                    <span>88%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-puzzle-piece"></i>
-                    <h3>Problem Solving</h3>
-                </div>
-                <p class="skill-description">Logical thinking and creative solution development.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 85%"></div>
-                    <span>85%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-users"></i>
-                    <h3>Teamwork</h3>
-                </div>
-                <p class="skill-description">Strong collaborative abilities and emerging leadership skills.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 90%"></div>
-                    <span>90%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-book-quran"></i>
-                    <h3>Teaching</h3>
-                </div>
-                <p class="skill-description">Experienced in teaching Quran and primary-level subjects with patience and dedication.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 95%"></div>
-                    <span>95%</span>
-                </div>
-            </div>
-
-            <div class="skill-box">
-                <div class="skill-header">
-                    <i class="fas fa-search"></i>
-                    <h3>Attention to Detail</h3>
-                </div>
-                <p class="skill-description">High accuracy in data entry and document creation.</p>
-                <div class="skill-bar">
-                    <div class="progress" style="width: 92%"></div>
-                    <span>92%</span>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-    <section id="projects">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            <!-- Project cards will be dynamically added via JavaScript -->
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Services</span>
+        <h2 class="section-title">What I Can Build For You</h2>
+        <p class="section-sub">
+          Development and marketing services focused on real business requirements.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card reveal">
+          <span class="service-num">01</span>
+          <h3>PHP &amp; Laravel Development</h3>
+          <p>
+            Custom backend systems, database-driven applications, business management
+            systems, authentication systems, CRUD applications, and scalable web solutions
+            using PHP and Laravel.
+          </p>
+          <ul class="service-list">
+            <li>Custom PHP Applications</li>
+            <li>Laravel Web Applications</li>
+            <li>Database-Driven Systems</li>
+            <li>Authentication &amp; User Roles</li>
+            <li>CRUD &amp; Business Logic</li>
+            <li>API Integration</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-num">02</span>
+          <h3>Web Application &amp; ERP Development</h3>
+          <p>
+            Practical business applications such as accounting systems, ERP-style solutions,
+            inventory systems, reporting dashboards, and management platforms.
+          </p>
+          <ul class="service-list">
+            <li>Accounting Systems</li>
+            <li>ERP Solutions</li>
+            <li>Inventory Management</li>
+            <li>Business Dashboards</li>
+            <li>Financial Reports</li>
+            <li>User &amp; Company Management</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-num">03</span>
+          <h3>Responsive Website Development</h3>
+          <p>
+            Modern, responsive, and user-friendly websites built with HTML, CSS, JavaScript,
+            Bootstrap, and PHP-based technologies.
+          </p>
+          <ul class="service-list">
+            <li>Responsive Websites</li>
+            <li>Business Websites</li>
+            <li>E-commerce Interfaces</li>
+            <li>Landing Pages</li>
+            <li>Interactive UI</li>
+            <li>Mobile-Friendly Design</li>
+          </ul>
+        </article>
+
+        <article class="service-card reveal">
+          <span class="service-num">04</span>
+          <h3>Digital Marketing &amp; SEO</h3>
+          <p>
+            Digital marketing and SEO solutions designed to improve online visibility,
+            content performance, audience engagement, and brand presence.
+          </p>
+          <ul class="service-list">
+            <li>SEO Optimization</li>
+            <li>Keyword Research</li>
+            <li>SEO Content</li>
+            <li>Social Media Marketing</li>
+            <li>Content Strategy</li>
+            <li>Brand Promotion</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section section--alt">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-sub">Practical solutions built for real-world requirements.</p>
+      </div>
+
+      <div class="project-filters reveal" id="project-filters" role="group" aria-label="Filter projects by category">
+        <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+        <button type="button" class="filter-btn" data-filter="php">PHP &amp; Laravel</button>
+        <button type="button" class="filter-btn" data-filter="business">Business Systems</button>
+        <button type="button" class="filter-btn" data-filter="frontend">Frontend</button>
+        <button type="button" class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button type="button" class="filter-btn" data-filter="ecommerce">E-commerce</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"></div>
+
+      <p class="projects-empty" id="projects-empty" hidden>No projects in this category yet.</p>
+
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact" class="section">
+    <div class="container">
+
+      <div class="section-head reveal">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Let's Work Together</h2>
+        <p class="section-sub">
+          Have a project, business idea, or website requirement in mind? Feel free to get in
+          touch. I am available for web development, PHP/Laravel applications, business
+          systems, and digital marketing projects.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <ul class="contact-list">
+            <li>
+              <a class="contact-item" href="mailto:fatimasohwardii@gmail.com">
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="m2 7 10 6 10-6"/>
+                  </svg>
+                </span>
+                <span class="ci-text">
+                  <span class="ci-label">Email</span>
+                  <span class="ci-value">fatimasohwardii@gmail.com</span>
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <div class="contact-item">
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </span>
+                <span class="ci-text">
+                  <span class="ci-label">Location</span>
+                  <span class="ci-value">Karachi, Pakistan</span>
+                </span>
+              </div>
+            </li>
+
+            <li>
+              <div class="contact-item">
+                <span class="ci-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="9"/>
+                    <path d="M12 7v5l3 2"/>
+                  </svg>
+                </span>
+                <span class="ci-text">
+                  <span class="ci-label">Response Time</span>
+                  <span class="ci-value">Usually within 24 hours</span>
+                </span>
+              </div>
+            </li>
+          </ul>
         </div>
-    </section>
 
-    <section id="contact">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-container">
-            <!-- Left Column: Contact Info -->
-            <div class="contact-info">
-                <div class="contact-card">
-                    <div class="icon-box">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h4>Phone</h4>
-                    <a href="tel:+923702515870">+92 370 2515870</a>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="icon-box">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h4>Email</h4>
-                    <a href="mailto:kf1276382@gmail.com">kf1276382@gmail.com</a>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="icon-box">
-                        <i class="fas fa-location-dot"></i>
-                    </div>
-                    <h4>Location</h4>
-                    <p>Karachi, Pakistan</p>
-                </div>
+        <form id="contact-form" class="contact-form reveal"
+              action="https://formsubmit.co/fatimasohwardii@gmail.com"
+              method="POST">
 
-                <div class="social-links">
-                    <a href="https://github.com/fatimasoharwardi" class="social-link" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/fatima-soharwardi-32a551358" class="social-link" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://wa.me/923702515870" class="social-link" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
+          <!-- FormSubmit configuration -->
+          <input type="hidden" name="_subject" value="New enquiry from portfolio website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Honeypot: hidden from users, catches bots -->
+          <input type="text" name="_honey" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your full name"
+                     autocomplete="name" required>
             </div>
-
-            <!-- Right Column: Contact Form -->
-            <div class="contact-form">
-                <h3>Send Message</h3>
-                <form id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="send-btn">
-                        Send Message <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com"
+                     autocomplete="email" required>
             </div>
-        </div>
-    </section>
+          </div>
 
-    
+          <div class="field">
+            <label for="cf-subject">Subject</label>
+            <input type="text" id="cf-subject" name="subject"
+                   placeholder="What is this regarding?" required>
+          </div>
 
-    <div class="whatsapp-button">
-        <a href="https://wa.me/923702515870" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message"
+                      placeholder="Tell me about your project or requirement..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" id="form-submit">
+            Send Message
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m22 2-7 20-4-9-9-4 20-7z"/>
+            </svg>
+          </button>
+
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Kaneez Fatima Soharwardi</h3>
+        <p>PHP &amp; Laravel Developer | Digital Marketing Specialist</p>
+        <p>Karachi, Pakistan</p>
+        <p><a href="mailto:fatimasohwardii@gmail.com">fatimasohwardii@gmail.com</a></p>
+      </div>
+
+      <nav class="footer-col" aria-label="Footer navigation">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-col">
+        <h4>Elsewhere</h4>
+        <ul class="footer-links">
+          <li>
+            <a href="https://github.com/fatimasoharwardi" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </li>
+          <li><a href="mailto:fatimasohwardii@gmail.com">Email</a></li>
+        </ul>
+      </div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kaneez Fatima Soharwardi. All rights reserved.</p>
+      <p>Built with HTML, CSS &amp; JavaScript.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
